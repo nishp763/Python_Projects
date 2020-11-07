@@ -22,6 +22,7 @@ Explanation: 13 x 1 = 13; 13 itself is a prime number
 **Challenge** Write a Python function to determine if a given string is a palindrome.</br>
 - Only consider letters (A-Z)</br>
 - Ignore case (for example, 'A'=='a')</br>
+
 **Input:** string to evaluate</br>
 **Output:** boolean value</br>
 **Sample Input & Output:**
