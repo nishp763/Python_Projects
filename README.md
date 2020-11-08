@@ -19,7 +19,7 @@ Explanation: 13 x 1 = 13; 13 itself is a prime number
 ```
 
 ### Identify a palindrome
-**Challenge** Write a Python function to determine if a given string is a palindrome.</br>
+**Challenge:** Write a Python function to determine if a given string is a palindrome.</br>
 
 - Only consider letters (A-Z)</br>
 - Ignore case (for example, 'A'=='a')</br>
@@ -40,7 +40,7 @@ Explanation: Once the case, punctuation and other characters are removed from th
 ```
 
 ### Sort a string
-**Challenge** Write a Python function to sort the words in a string. </br>
+**Challenge:** Write a Python function to sort the words in a string. </br>
 
 - Ignore case when sorting. For example: "The" is same as "the". </br>
 - Words in the output strings should have same case as input. </br>
@@ -58,4 +58,19 @@ Explanation: sorted alphabetically.
 Input: 'banana ORANGE apple'
 Output: 'apple banana ORANGE'
 Explanation: sorted alphabetically and case ignored
+```
+
+### Find all list items
+**Challenge:** Write a Python function to index all items in a list. </br>
+
+- Keep in mind that lists can contain other lists. </br>
+
+**Input:** list to search, value to search for </br>
+**Output:** list of indices </br>
+**Sample Input & Output:**
+```python
+>>> example = [[[1, 2, 3], 2, [1, 3]], [1, 2, 3]]
+>>> index_all(example, 2)
+Input: ([[[1, 2, 3], 2, [1, 3]], [1, 2, 3]], 2)
+Output: [[0, 0, 1], [0, 1], [1, 1]]
 ```
