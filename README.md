@@ -108,5 +108,17 @@ Elapsed time: 4.213 seconds (0.213 seconds too slow)
 
 **Sample Input & Output:**
 ```python
+>>> save_load_dictionary()
+Input: 
+dict_for_save =	{"brand": "Ford", "model": "Mustang", "year": 1964}
+file_path = current_directory + "carDictionary"
 
+save_dict(dict_for_save, file_path)
+load_dict(fpath)
+
+Output:
+Dictionary saved successfully to: /home/carDictionary
+Dictionary loaded successfully
+{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+Is the loaded dictionary same as the dictionary which was written to the file: True
 ```
