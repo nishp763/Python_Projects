@@ -91,3 +91,22 @@ Your target time is 4 seconds.
 
 Elapsed time: 4.213 seconds (0.213 seconds too slow)
 ```
+
+### Save a dictionary
+
+**Challenge:** 
+- Write a Python function to save a dictionary object to a file.</br>
+- Write another Python function to load a saved dictionary object from a file and display it.</br>
+
+**Input:** 
+- `save_dict`: dictionary to save, output file path as parameters.</br>
+- `load_dict`: file path to read the stored dictionary as parameter.</br>
+  
+**Output:** </br>
+- `save_dict`: output file with saved dictionary object.</br>
+- `load_dict`: retrieved dictionary object. </br>
+
+**Sample Input & Output:**
+```python
+
+```
