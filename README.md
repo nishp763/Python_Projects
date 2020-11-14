@@ -122,3 +122,21 @@ Dictionary loaded successfully
 {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 Is the loaded dictionary same as the dictionary which was written to the file: True
 ```
+
+### Set an alarm
+**Challenge:** Write a Python function to play a sound and print a message at a set time.</br>
+
+**Input:** alarm time, sound file, message.</br>
+
+**Output:** print a message indicating the alarm time, then alarm message with alarm sound.</br>
+
+**Sample Input & Output:** </br>
+```python
+>>> set_alarm(time.time()+1, 'alarm.wav', 'Wake up!')
+Input: time.time()+1, 'alarm.wav', 'Wake up!'
+
+Output: 
+Alarm set for Sat Nov 14 15:08:50 2020
+Wake up!
+<Playing sound file>
+```
