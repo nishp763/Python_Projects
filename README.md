@@ -74,3 +74,20 @@ Explanation: sorted alphabetically and case ignored
 Input: ([[[1, 2, 3], 2, [1, 3]], [1, 2, 3]], 2)
 Output: [[0, 0, 1], [0, 1], [1, 1]]
 ```
+
+### Play the waiting game
+**Challenge:** Write a Python function to play a pulse pounding game of patience, known as the <em>waiting game</em>. When the player runs the waiting game program it should print a message for them to wait a random amount of time, somewhere between 2 to 4 seconds. When the player presses <em>Enter</em>, that starts a timer. The player's goal is to wait the specified number of seconds and then press <em>Enter</em> again. That displays the elapsed time, along with a message about whether the player was too fast, too slow, or right on target.</br>
+
+**Input:** 1st Enter keypress will start timer and 2nd Enter keypress will stop the timer.</br>
+**Output:** Display the target time to user then display the reaction time along with time difference between the target and the actual.</br>
+**Sample Input & Output:**
+```python
+>>> waiting_game()
+
+Your target time is 4 seconds.
+---Press Enter to Begin---
+
+...Press Enter again after 4 seconds...
+
+Elapsed time: 4.213 seconds (0.213 seconds too slow)
+```
