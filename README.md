@@ -151,3 +151,26 @@ Output:
         Subject: Python: Hello Email!
         Message: Hi, this is an email from Python
 ```
+
+**Challenge:** Write a Python function to determine the probability of certain outcomes when rolling dice. Use Monte Carlo method with 1 million simulations to get a stastically significant result. </br>
+**Input:** variable number of arguments for sides of dice. </br>
+**Output:** table of probability for each possible outcome. </br>
+**Sample Input & Output:** </br>
+```python
+>>> roll_dice(4,6,6)
+Outcome Probability
+3	0.69%
+4	2.08%
+5	4.18%
+6	6.94%
+7	9.71%
+8	12.52%
+9	13.87%
+10	13.87%
+11	12.56%
+12	9.69%
+13	6.94%
+14	4.16%
+15	2.09%
+16	0.70%
+```
