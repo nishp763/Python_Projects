@@ -144,6 +144,10 @@ Wake up!
 **Output:** email sent to the receiver's email address with the subject line and message body.</br>
 **Sample Input & Output** </br>
 ```python
-Input: "nishp763@gmail.com", "Python: Hello Email!", "Hi, this is an email from Python program."
+Input: "receiveremail@gmail.com", "Python: Hello Email!", "Hi, this is an email from Python program."
 Output:
+        To: receiveremail@gmail.com
+        From: senderemail@gmail.com
+        Subject: Python: Hello Email!
+        Message: Hi, this is an email from Python
 ```
