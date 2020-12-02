@@ -137,3 +137,13 @@ Alarm set for Sat Nov 14 15:08:50 2020
 Wake up!
 <Playing sound file>
 ```
+
+### Send an email
+**Challenge:** Write a Python function to send a basic email notification.</br>
+**Input:** receiver email address, subject line, message body.</br>
+**Output:** email sent to the receiver's email address with the subject line and message body.</br>
+**Sample Input & Output** </br>
+```python
+Input: "nishp763@gmail.com", "Python: Hello Email!", "Hi, this is an email from Python program."
+Output:
+```
