@@ -93,7 +93,6 @@ Elapsed time: 4.213 seconds (0.213 seconds too slow)
 ```
 
 ### Save a dictionary
-
 **Challenge:** 
 - Write a Python function to save a dictionary object to a file.</br>
 - Write another Python function to load a saved dictionary object from a file and display it.</br>
@@ -196,7 +195,7 @@ Outcome Probability
 
 **Sample Input & Output:** </br>
 ```python
->>> count_words('input.text')
+>>> count_words('input.txt')
 Total Words: 473
 
 Top 20 Words:
