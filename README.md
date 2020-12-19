@@ -152,6 +152,7 @@ Output:
         Message: Hi, this is an email from Python
 ```
 
+### Simulate dice
 **Challenge:** Write a Python function to determine the probability of certain outcomes when rolling dice. Use Monte Carlo method with 1 million simulations to get a stastically significant result. </br>
 **Input:** variable number of arguments for sides of dice. </br>
 **Output:** table of probability for each possible outcome. </br>
@@ -173,4 +174,33 @@ Outcome Probability
 14	4.16%
 15	2.09%
 16	0.70%
+```
+
+### Count unique words
+**Challenge:** Write a python function to count the number of unique words and how often each occures. Note:</br>
+- Ignore case</br>
+   - e.g. "The" is same as "the"</br>
+- Words contain:
+   - Letters</br>
+   - Numbers</br>
+   - Apostrophes</br>
+   - Hyphens</br>
+**Input:** path to a text file.</br>
+**Output:** print message with:</br>
+- total number of words</br>
+- top 20 most frequent words</br>
+- number of occurrences for top 20</br>
+**Sample Input & Output:** </br>
+```python
+>>> count_words('input.text')
+Total Words: 473
+
+Top 20 Words:
+TEXT             13
+CHALLENGE        11
+WORDS            9
+YOUR             5
+FUNCTION         5
+...              ...
+
 ```
