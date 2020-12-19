@@ -178,6 +178,7 @@ Outcome Probability
 
 ### Count unique words
 **Challenge:** Write a python function to count the number of unique words and how often each occures. Note:</br>
+
 - Ignore case</br>
    - e.g. "The" is same as "the"</br>
 - Words contain:
@@ -185,11 +186,14 @@ Outcome Probability
    - Numbers</br>
    - Apostrophes</br>
    - Hyphens</br>
+
 **Input:** path to a text file.</br>
 **Output:** print message with:</br>
+
 - total number of words</br>
 - top 20 most frequent words</br>
 - number of occurrences for top 20</br>
+
 **Sample Input & Output:** </br>
 ```python
 >>> count_words('input.text')
