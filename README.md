@@ -207,3 +207,13 @@ FUNCTION         5
 ...              ...
 
 ```
+
+### Generate a password
+**Challenge:** Write a python function to generate passphrases using dicemware. Go to https://www.diceware.com to get the diceware list.</br>
+**Input:** Number of words in passphrase.</br>
+**Output:** String of random words, separated by spaces.</br>
+**Sample Input & Output:**</br>
+```python
+>>> generate_passphrase(5)
+'vice fame tango abide verb'
+```
