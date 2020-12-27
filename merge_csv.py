@@ -1,18 +1,34 @@
 import os # for file path manipulation
-import pandas as pd # for reading csv files
+import csv # for dealing with CSV files
 
 def merge_csv(myfilelist, outfile):
-    master_df = pd.DataFrame()
-    # check all file which will be read exists and file path is valid
+    col_list = list() # holds all column names for merged csv file
+
+    # loop through all csv files ensure path is correct and get column names
     for file_to_read in myfilelist:
-        if (os.path.exists(file_to_read) == False):
+        if (os.path.exists(file_to_read) == False): # invalid path
             print("ERROR File Doesn't Exist:",file_to_read)
             return
-        else:
-            df_read = pd.read_csv(file_to_read, header=0)
-            master_df = master_df.append(df_read, ignore_index=True)
- 
-    master_df.to_csv(outfile, index=False)
+        else: # read column names and add it to col_list
+            csv_file = open(file_to_read, 'r')
+            reader = csv.DictReader(csv_file).fieldnames # read col names
+            csv_file.close()
+            for col in reader: # go through all cols in csv file
+                if col not in col_list: # its a unique col then add it
+                    col_list.append(col)
+    
+    # start writing to merged output file
+    out_merged_file = open(outfile,'w')
+    writer = csv.DictWriter(out_merged_file,fieldnames=col_list) # provide all columns
+    writer.writeheader() # write all col values
+
+    # read csv files and write to merged files row by row
+    for file_to_read in myfilelist:
+        csv_file_read = open(file_to_read,'r') # open csv file
+        reader = csv.DictReader(csv_file_read) # read the entire csv as dict obj
+        writer.writerows(reader) # write to output file
+        csv_file_read.close()  
+    out_merged_file.close()
     return
     
 
