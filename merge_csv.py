@@ -1,6 +1,5 @@
 import os # for file path manipulation
 import pandas as pd # for reading csv files
-import numpy as np
 
 def merge_csv(myfilelist, outfile):
     master_df = pd.DataFrame()
