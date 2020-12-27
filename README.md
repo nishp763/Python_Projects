@@ -217,3 +217,12 @@ FUNCTION         5
 >>> generate_passphrase(5)
 'vice fame tango abide verb'
 ```
+
+### Merge CSV Files
+**Challenge:** Write a Python function to merge multiple CSV files. Note: your function must be robust enough to merge CSV files even if the headers don't match or if the header order is different.</br>
+**Input:** list of input files, output file path.</br>
+**Output:** a single .csv file containing all merged information.</br>
+**Sample Input & Output:** </br>
+```python
+>>> merge_csv(['class1.csv','class2.csv'], 'all_students.csv')
+```
