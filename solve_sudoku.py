@@ -1,10 +1,59 @@
-def solve_sudoku(puzzle_list):
+import copy
+
+puzzle_list = []
+
+# this function checks whether a number can be placed in row,col specified by the user
+# Rules of Sudoku:
+# - a number can only appear once along any row
+# - a number can only appear once along any col
+# - a number can only appear once in the mini 3x3 grid
+def is_move_possible(row,col,num):
+    global puzzle_list
+
+    # check along row and col
+    for index in range(0,9):
+        if puzzle_list[row][index] == num: # if number exists in the row
+            #print("Number found along Row")
+            return False
+
+        if puzzle_list[index][col] == num: # if number exists in the col
+            #print("Number found along Column")
+            return False
+
+    # check within the mini 3x3 grid
+    x0 = (row//3)*3
+    y0 = (col//3)*3
+    for x in range(0,3):
+        for y in range(0,3):
+            if puzzle_list[x0+x][y0+y] == num:
+                #print("Number found in Grid")
+                return False
+    return True # number doesn't exist and the move is valid
+
+def solve_sudoku(puzzle_to_solve):
+    global puzzle_list
+    puzzle_list = puzzle_to_solve
+    solve()
+
+def solve():
+    global puzzle_list
+    for row_i in range(0,9):
+        for col_i in range(0,9):
+            if puzzle_list[row_i][col_i] == 0:
+                for n in range(1,10):
+                    if is_move_possible(row_i,col_i,n):
+                        puzzle_list[row_i][col_i] = n
+                        solve()
+                        # bad choice, revert it
+                        puzzle_list[row_i][col_i] = 0
+                return
     print_sudoku(puzzle_list)
 
 def print_sudoku(puzzle_list):
+    localpuzzle = copy.deepcopy(puzzle_list)
     row_count = 0 # tracks which row is being printed
-    print() # print empty lne
-    for row in puzzle_list: # iterate through row by row
+    print() # print empty line
+    for row in localpuzzle: # iterate through row by row
         row_count += 1 # increment row count
         for item in range(0,9): # replace 0's with *
             if (row[item] == 0):
@@ -33,5 +82,9 @@ if __name__ == "__main__":
               [0,0,0,4,1,9,0,0,5],
               [0,0,0,0,8,0,0,7,9]]
 
+    print("\nPUZZLE_______________")
+    print_sudoku(puzzle)
+
     # call solve function to provide the solution          
-    solve_sudoku(puzzle) 
+    print("\nSOLUTION_____________")
+    solve_sudoku(puzzle)
