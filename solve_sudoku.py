@@ -27,21 +27,21 @@ def is_move_possible(row,col,num,puzzle_list):
     return True # number doesn't exist and the move is valid
 
 def solve_sudoku(puzzle_list):
-    for row_i in range(0,9):
-        for col_i in range(0,9):
-            if puzzle_list[row_i][col_i] == 0:
-                for n in range(1,10):
-                    if is_move_possible(row_i,col_i,n,puzzle_list):
-                        puzzle_list[row_i][col_i] = n
-                        if (trial := solve_sudoku(puzzle_list)):
-                            return trial
-                        else:
-                            puzzle_list[row_i][col_i] = 0
-                return False
-    return puzzle_list
+    for row_i in range(0,9): # go through rows
+        for col_i in range(0,9): # go through cols
+            if puzzle_list[row_i][col_i] == 0: # find empty spot
+                for n in range(1,10): # try a number from 1 to 10
+                    if is_move_possible(row_i,col_i,n,puzzle_list): # check if move possible
+                        puzzle_list[row_i][col_i] = n # possible then try the move
+                        if solve_sudoku(puzzle_list): # recursive call to solve the rest of the puzzle
+                            return True # solved
+                        else: # bad move, backtrack
+                            puzzle_list[row_i][col_i] = 0 # undo the move
+                return False # can't find a number to place
+    return puzzle_list # since lists are mutable the original puzzle got modified
 
 def print_sudoku(puzzle_list):
-    localpuzzle = copy.deepcopy(puzzle_list)
+    localpuzzle = copy.deepcopy(puzzle_list) # create a copy to prevent modifying the original one
     row_count = 0 # tracks which row is being printed
     print() # print empty line
     for row in localpuzzle: # iterate through row by row
@@ -78,5 +78,8 @@ if __name__ == "__main__":
 
     # call solve function to provide the solution          
     print("\nSOLUTION_____________")
-    solved = solve_sudoku(puzzle)
-    print_sudoku(solved)
+    solved = solve_sudoku(puzzle) # note lists are mutable so puzzle will be modified
+    if(solved): # puzzle has a solution
+        print_sudoku(puzzle)
+    else: # no solution
+        print("Error: Unable to solve the puzzle")
