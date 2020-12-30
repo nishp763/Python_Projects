@@ -1,15 +1,11 @@
 import copy
 
-puzzle_list = []
-
 # this function checks whether a number can be placed in row,col specified by the user
 # Rules of Sudoku:
 # - a number can only appear once along any row
 # - a number can only appear once along any col
 # - a number can only appear once in the mini 3x3 grid
-def is_move_possible(row,col,num):
-    global puzzle_list
-
+def is_move_possible(row,col,num,puzzle_list):
     # check along row and col
     for index in range(0,9):
         if puzzle_list[row][index] == num: # if number exists in the row
@@ -30,24 +26,19 @@ def is_move_possible(row,col,num):
                 return False
     return True # number doesn't exist and the move is valid
 
-def solve_sudoku(puzzle_to_solve):
-    global puzzle_list
-    puzzle_list = puzzle_to_solve
-    solve()
-
-def solve():
-    global puzzle_list
+def solve_sudoku(puzzle_list):
     for row_i in range(0,9):
         for col_i in range(0,9):
             if puzzle_list[row_i][col_i] == 0:
                 for n in range(1,10):
-                    if is_move_possible(row_i,col_i,n):
+                    if is_move_possible(row_i,col_i,n,puzzle_list):
                         puzzle_list[row_i][col_i] = n
-                        solve()
-                        # bad choice, revert it
-                        puzzle_list[row_i][col_i] = 0
-                return
-    print_sudoku(puzzle_list)
+                        if (trial := solve_sudoku(puzzle_list)):
+                            return trial
+                        else:
+                            puzzle_list[row_i][col_i] = 0
+                return False
+    return puzzle_list
 
 def print_sudoku(puzzle_list):
     localpuzzle = copy.deepcopy(puzzle_list)
@@ -87,4 +78,5 @@ if __name__ == "__main__":
 
     # call solve function to provide the solution          
     print("\nSOLUTION_____________")
-    solve_sudoku(puzzle)
+    solved = solve_sudoku(puzzle)
+    print_sudoku(solved)
