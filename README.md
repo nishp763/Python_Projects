@@ -263,3 +263,29 @@ FUNCTION         5
 >>> zip_all('.\\my_stuff',['.jpg','.txt'],'my_stuff.zip')
 Output -> single my_stuff.zip file containing all .jpg and .txt file from my_stuff directory
 ```
+
+### Download sequential files
+**Challenge:** Write a Python function to download and save a sequence of files. Note: it is not specified inside the function, how many images to download, so it should continue to download all available sequential files.</br>
+**Input:** It should take 2 inputs: URL for first item, output directory path.</br>
+**Output:** Automatically download all available sequential files from the internet and store it in the output directory.</br>
+**Sample Input & Output:** </br>
+```python
+>>> download_files('http://699340.youcanlearnit.net/image001.jpg','.\images')
+
+Successfully downloaded
+http://699340.youcanlearnit.net/image001.jpg
+
+Successfully downloaded
+http://699340.youcanlearnit.net/image002.jpg
+
+Successfully downloaded
+http://699340.youcanlearnit.net/image003.jpg
+...
+...
+...
+Successfully downloaded
+http://699340.youcanlearnit.net/image050.jpg
+
+Could not retrieve
+http://699340.youcanlearnit.net/image051.jpg
+```
