@@ -253,3 +253,13 @@ FUNCTION         5
               [2,8,7,4,1,9,6,3,5],
               [3,4,5,2,8,6,1,7,9]]
 ```
+
+### Build a ZIP archive
+**Challenge:** Write a Python function build a ZIP archive. Note: ZIP archive should maintain folder structure relative to top-level directory.</br>
+**Input:** It should accept the following: input directory path, list of file extensions, output file path.</br>
+**Output:** a ZIP file. </br>
+**Sample Input & Output:** </br>
+```python
+>>> zip_all('.\\my_stuff',['.jpg','.txt'],'my_stuff.zip')
+Output -> single my_stuff.zip file containing all .jpg and .txt file from my_stuff directory
+```
