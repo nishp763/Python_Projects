@@ -1,5 +1,6 @@
 from collections import Counter # for counting
 import re # for regular expressions
+import os # for path specification
 
 def count_words(path):
     file = open(path, 'r', encoding='utf-8') # open text file in read mode
@@ -23,4 +24,5 @@ def count_words(path):
     
 if __name__ == "__main__":
     input_text_file = 'input.txt' # file to read
-    count_words(input_text_file)
+    input_path = os.path.join(os.getcwd(), "files", input_text_file)
+    count_words(input_path)

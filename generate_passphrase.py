@@ -1,4 +1,5 @@
 from random import randint # for random generation
+import os # for path generation
 
 # this method will generate a five digit number aka simulating a dice roll
 def gen_five_rand_digits():
@@ -8,7 +9,7 @@ def gen_five_rand_digits():
     return five_dig_str # return as a string to match dictionary keys datatype
     
 def generate_passphrase(num_words):
-    file_path = 'diceware_list.txt' # file path containing diceware list
+    file_path = os.path.join(os.getcwd(),'files','diceware_list.txt') # file path containing diceware list
     file = open(file_path, 'r') # open text file in read mode
 
     diceware_dict = {} # create a dictionary to hold dice value and passphrase from the diceware list
